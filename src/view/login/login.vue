@@ -1,27 +1,31 @@
 <template>
   <div class="login-container">
     <el-form class="login-form" autoComplete="on" :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left">
-      <h3 class="title">运营管理平台</h3>
+      <h3 class="title">管理平台</h3>
       <el-form-item prop="username">
         <span class="svg-container svg-container_login">
-          <i class="fas fa-user" style="color:red;font-size:20px;"></i>
+          <!-- <svg-icon icon-class="user" /> -->
+          <i class="fas fa-user-tie"></i>
         </span>
-        <el-input  name="username" type="text" v-model="loginForm.username" autoComplete="on" placeholder="username" />
+        <el-input name="username" type="text" v-model="loginForm.username" autoComplete="on" placeholder="username" />
       </el-form-item>
       <el-form-item prop="password">
         <span class="svg-container">
-          <i class="fas fa-file-alt" style="color:red;font-size:20px;"></i>
+          <!-- <svg-icon icon-class="password"></svg-icon> -->
+          <i class="fas fa-lock"></i>
+          
         </span>
         <el-input name="password" :type="pwdType" @keyup.enter.native="handleLogin" v-model="loginForm.password" autoComplete="on"
           placeholder="password"></el-input>
-          <span class="show-pwd" @click="showPwd"><svg-icon icon-class="eye" /></span>
+          <!-- <span class="show-pwd" @click="showPwd"><svg-icon icon-class="eye" /></span> -->
       </el-form-item>
       <el-form-item>
         <el-button type="primary" style="width:100%;" :loading="loading" @click.native.prevent="handleLogin">
-          Sign in
+          登陆
         </el-button>
       </el-form-item>
       <!-- <div class="tips">
+        <span style="margin-right:20px;">忘记密码？</span>
         <span style="margin-right:20px;">username: admin</span>
         <span> password: admin</span>
       </div> -->
@@ -30,6 +34,8 @@
 </template>
 
 <script>
+import { isvalidUsername } from "@/utils/validate";
+
 export default {
   name: "login",
   data() {
@@ -93,80 +99,93 @@ export default {
 };
 </script>
 
-<style scoped>
-.login-container .el-input {
-  display: inline-block;
-  height: 47px;
-  width: 85%;
-}
+<style rel="stylesheet/scss" lang="scss">
+$bg: #2d3a4b;
+$light_gray: #eee;
 
-.login-container .el-input input {
-  background: transparent;
-  border: 0px;
-  -webkit-appearance: none;
-  border-radius: 0px;
-  padding: 12px 5px 12px 15px;
-  color: #eee;
-  height: 47px;
-  -webkit-box-shadow: 0 0 0px 1000px #2d3a4b inset !important;
-  -webkit-text-fill-color: #fff !important;
+/* reset element-ui css */
+.login-container {
+  .el-input {
+    display: inline-block;
+    height: 47px;
+    width: 85%;
+    input {
+      background: transparent;
+      border: 0px;
+      -webkit-appearance: none;
+      border-radius: 0px;
+      padding: 12px 5px 12px 15px;
+      color: $light_gray;
+      height: 47px;
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px $bg inset !important;
+        -webkit-text-fill-color: #fff !important;
+      }
+    }
+  }
+  .el-form-item {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    color: #454545;
+  }
 }
+</style>
 
-.login-container .el-form-item {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  /* background: rgba(0, 0, 0, 0.1); */
-  background: #fff;
-  border-radius: 5px;
-  color: #454545;
-}
-
+<style  lang="scss" scoped>
+$bg: #2d3a4b;
+$dark_gray: #889aa4;
+$light_gray: #eee;
 .login-container {
   position: fixed;
   height: 100%;
   width: 100%;
-  background: #2d3a4b !important;
-}
-
-.login-container .login-form {
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: 520px;
-  padding: 35px 35px 15px 35px;
-  margin: 120px auto;
-}
-
-.login-container .tips {
-  font-size: 14px;
-  color: #fff;
-  margin-bottom: 10px;
-}
-.login-container .tips span:first-of-type {
-  margin-right: 16px;
-}
-.login-container .svg-container {
-  padding: 6px 15px 6px 15px;
-  margin-right: 20px;
-  color: #889aa4;
-  vertical-align: middle;
-  width: 30px;
-  display: inline-block;
-}
-.login-container .title {
-  font-size: 26px;
-  font-weight: 400;
-  color: #eee;
-  margin: 0px auto 40px auto;
-  text-align: center;
-  font-weight: bold;
-}
-.login-container .show-pwd {
-  position: absolute;
-  right: 10px;
-  top: 7px;
-  font-size: 16px;
-  color: #889aa4;
-  cursor: pointer;
-  user-select: none;
+  background-color: $bg;
+  .login-form {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 520px;
+    padding: 35px 35px 15px 35px;
+    margin: 120px auto;
+  }
+  .tips {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 10px;
+    cursor: pointer;
+    span {
+      &:first-of-type {
+        margin-right: 16px;
+      }
+    }
+  }
+  .svg-container {
+    padding: 6px 5px 6px 15px;
+    color: $dark_gray;
+    vertical-align: middle;
+    width: 30px;
+    display: inline-block;
+    &_login {
+      font-size: 20px;
+    }
+  }
+  .title {
+    font-size: 26px;
+    font-weight: 400;
+    color: $light_gray;
+    margin: 0px auto 40px auto;
+    text-align: center;
+    font-weight: bold;
+  }
+  .show-pwd {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    font-size: 16px;
+    color: $dark_gray;
+    cursor: pointer;
+    user-select: none;
+  }
 }
 </style>

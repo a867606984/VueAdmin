@@ -47,15 +47,43 @@
             router
             >
             <el-menu-item index="/appMenu/home">
-              <i class="fas fa-money-check-alt"></i> 收费业务对账子系统  
+              <!-- <i class="fas fa-money-check-alt"></i>  -->
+              对账系统  
               <!-- <router-link to="/home">处理中心</router-link> -->
             </el-menu-item>
              <el-menu-item index="/appMenu/platform">
-              <i class="fas fa-mobile-alt"></i> 移动支付平台对账子系统
+              <!-- <i class="fas fa-mobile-alt"></i>  -->
+              通行业务移动支付日信息统计
                <!-- <router-link to="/platform">我的工作台</router-link> -->
             </el-menu-item>
             <el-menu-item index="/appMenu/order">
-              <i class="fas fa-money-check-alt"></i> 对账子系统
+              <!-- <i class="fas fa-money-check-alt"></i>  -->
+              辽通宝报表分析系统
+              <!-- <router-link to="/order">订单管理</router-link> -->
+            </el-menu-item>
+            <el-menu-item index="/appMenu/order">
+              <!-- <i class="fas fa-money-check-alt"></i>  -->
+              支付平台报表分析系统
+              <!-- <router-link to="/order">订单管理</router-link> -->
+            </el-menu-item>
+            <el-menu-item index="/appMenu/order">
+              <!-- <i class="fas fa-money-check-alt"></i>  -->
+              清分结算系统
+              <!-- <router-link to="/order">订单管理</router-link> -->
+            </el-menu-item>
+            <el-menu-item index="/appMenu/order">
+              <!-- <i class="fas fa-money-check-alt"></i>  -->
+              个人账单查询子系统
+              <!-- <router-link to="/order">订单管理</router-link> -->
+            </el-menu-item>
+            <el-menu-item index="/appMenu/order">
+              <!-- <i class="fas fa-money-check-alt"></i>  -->
+              风控管理子系统
+              <!-- <router-link to="/order">订单管理</router-link> -->
+            </el-menu-item>
+            <el-menu-item index="/appMenu/order">
+              <!-- <i class="fas fa-money-check-alt"></i>  -->
+              退货管理子系统
               <!-- <router-link to="/order">订单管理</router-link> -->
             </el-menu-item>
         </el-menu>
@@ -114,6 +142,8 @@ export default {
 header {
   width: 100%;
   overflow: hidden;
+  background: rgb(0, 33, 64);
+  border-bottom: 0.01rem solid #fff;
 }
 .el-dropdown {
   vertical-align: top;
@@ -129,13 +159,13 @@ header {
   float: left;
   width: 50%;
   height: 80px;
-  background: #eee;
+  /* background: #eee; */
 }
 .menu {
   float: left;
   width: 50%;
   height: 80px;
-  background: lightblue;
+  /* background: lightblue; */
 }
 
 .menu ul {

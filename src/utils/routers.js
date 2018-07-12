@@ -26,13 +26,8 @@ const routers = [
             },
             {
                 path: '/appMenu/order',
-                redirect: '/appMenu/order/unionPay',
                 component: () => import("@/view/order/index"),
-                children: [
-                    { path: 'unionPay', component: () => import("@/view/order/unionPay") },
-                    { path: 'pos', component: () => import("@/view/order/pos") },
-                    { path: 'diff', component: () => import("@/view/order/diff") }
-                ]
+
             }
         ]
     },

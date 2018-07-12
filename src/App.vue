@@ -50,7 +50,7 @@ export default {
   /* background: linear-gradient(to bottom, #333, #fff, #fff, #fff); */
 }
 #app > div {
-  background: #fff;
+  /* background: #fff; */
 }
 * {
   margin: 0;

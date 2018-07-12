@@ -16,7 +16,7 @@ export default {
 </script>
 <style scoped>
 #appMenu {
-  padding: 0 30px 30px;
+  /* padding: 0 30px 30px; */
 }
 /* reset element-ui css */
 .login-container .el-input {
