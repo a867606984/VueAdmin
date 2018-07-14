@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-row :gutter="20">
+        <!-- <el-row :gutter="20">
             <el-col :xs="12" :sm="12" :lg="12">
                 <div class="grid-content bg-purple" id="channelChart" ></div>
             </el-col>
@@ -25,7 +25,8 @@
             <el-col :xs="12" :sm="12" :lg="12">
                 <div class="grid-content bg-purple" id="storeRateChart"></div>
             </el-col>
-        </el-row>
+        </el-row> -->
+        
     </div>
 </template>
 <script>
@@ -45,7 +46,7 @@ export default {
     return {};
   },
   mounted() {
-    this.drawLine();
+    // this.drawLine();
   },
   methods: {
     drawLine() {

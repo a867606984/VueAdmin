@@ -51,12 +51,12 @@
               对账系统  
               <!-- <router-link to="/home">处理中心</router-link> -->
             </el-menu-item>
-             <el-menu-item index="/appMenu/platform">
+             <el-menu-item index="/appMenu/cross">
               <!-- <i class="fas fa-mobile-alt"></i>  -->
               通行业务移动支付日信息统计
                <!-- <router-link to="/platform">我的工作台</router-link> -->
             </el-menu-item>
-            <el-menu-item index="/appMenu/order">
+            <el-menu-item index="/appMenu/ltb">
               <!-- <i class="fas fa-money-check-alt"></i>  -->
               辽通宝报表分析系统
               <!-- <router-link to="/order">订单管理</router-link> -->
