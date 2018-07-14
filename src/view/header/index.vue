@@ -61,7 +61,7 @@
               辽通宝报表分析系统
               <!-- <router-link to="/order">订单管理</router-link> -->
             </el-menu-item>
-            <el-menu-item index="/appMenu/order">
+            <el-menu-item index="/appMenu/platform">
               <!-- <i class="fas fa-money-check-alt"></i>  -->
               支付平台报表分析系统
               <!-- <router-link to="/order">订单管理</router-link> -->
@@ -76,12 +76,12 @@
               个人账单查询子系统
               <!-- <router-link to="/order">订单管理</router-link> -->
             </el-menu-item>
-            <el-menu-item index="/appMenu/order">
+            <el-menu-item index="/appMenu/control">
               <!-- <i class="fas fa-money-check-alt"></i>  -->
               风控管理子系统
               <!-- <router-link to="/order">订单管理</router-link> -->
             </el-menu-item>
-            <el-menu-item index="/appMenu/order">
+            <el-menu-item index="/appMenu/returnGoods">
               <!-- <i class="fas fa-money-check-alt"></i>  -->
               退货管理子系统
               <!-- <router-link to="/order">订单管理</router-link> -->

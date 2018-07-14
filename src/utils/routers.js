@@ -45,8 +45,39 @@ const routers = [
                     { path: 'day4', component: () => import("@/view/ltb/date/day/day4"), meta: { break: ["银行账单"] } },
                     { path: 'day5', component: () => import("@/view/ltb/date/day/day5"), meta: { break: ["银行账单"] } },
                 ]
-
-            }
+            },
+            {
+                path: '/appMenu/platform',
+                redirect: '/appMenu/platform/day',
+                component: () => import("@/view/platform/index"),
+                children: [
+                    { path: 'day', component: () => import("@/view/platform/date/day"), meta: { break: ["银行账单"] } },
+                    { path: 'day2', component: () => import("@/view/platform/date/day2"), meta: { break: ["银行账单"] } },
+                    { path: 'week', component: () => import("@/view/platform/date/week"), meta: { break: [" POS账单", "选项1"] } },
+                    { path: 'week2', component: () => import("@/view/platform/date/week2"), meta: { break: [" POS账单", "选项1"] } },
+                    { path: 'month', component: () => import("@/view/platform/date/month"), meta: { break: [" POS账单", "选项1"] } },
+                    { path: 'season', component: () => import("@/view/platform/date/season"), meta: { break: [" POS账单", "选项1"] } },
+                    { path: 'year', component: () => import("@/view/platform/date/year"), meta: { break: [" POS账单", "选项1"] } },
+                ]
+            },
+            {
+                path: '/appMenu/control',
+                redirect: '/appMenu/control/money',
+                component: () => import("@/view/control/index"),
+                children: [
+                    { path: 'money', component: () => import("@/view/control/money"), meta: { break: ["银行账单"] } },
+                    { path: 'lack', component: () => import("@/view/control/lack"), meta: { break: ["银行账单"] } },
+                ]
+            },
+            {
+                path: '/appMenu/returnGoods',
+                redirect: '/appMenu/returnGoods/import',
+                component: () => import("@/view/returnGoods/index"),
+                children: [
+                    { path: 'import', component: () => import("@/view/returnGoods/import"), meta: { break: ["银行账单"] } },
+                    { path: 'confirm', component: () => import("@/view/returnGoods/confirm"), meta: { break: ["银行账单"] } },
+                ]
+            },
         ]
     },
 ];

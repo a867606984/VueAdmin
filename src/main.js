@@ -67,6 +67,16 @@ router.beforeEach((to, from, next) => {
   }
 
 })
+Vue.prototype.$loadingShow = function (text) {
+  this.$loading({
+    body: true,
+    text,
+    background: "rgba(0, 0, 0, .8 )"
+  });
+  setTimeout(() => {
+    this.$loading().close();
+  }, 2000);
+}
 
 /* eslint-disable no-new */
 new Vue({
