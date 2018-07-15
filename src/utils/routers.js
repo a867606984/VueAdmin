@@ -78,6 +78,24 @@ const routers = [
                     { path: 'confirm', component: () => import("@/view/returnGoods/confirm"), meta: { break: ["银行账单"] } },
                 ]
             },
+            {
+                path: '/appMenu/settlement',
+                redirect: '/appMenu/settlement/finance',
+                component: () => import("@/view/settlement/index"),
+                children: [
+                    { path: 'finance', component: () => import("@/view/settlement/finance"), meta: { break: ["银行账单"] } },
+                    { path: 'business', component: () => import("@/view/settlement/business"), meta: { break: ["银行账单"] } },
+                    { path: 'result', component: () => import("@/view/settlement/result"), meta: { break: ["银行账单"] } }
+                ]
+            },
+            {
+                path: '/appMenu/search',
+                redirect: '/appMenu/search/search',
+                component: () => import("@/view/search/index"),
+                children: [
+                    { path: 'search', component: () => import("@/view/search/search"), meta: { break: ["银行账单"] } },
+                ]
+            }
         ]
     },
 ];

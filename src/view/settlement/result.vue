@@ -1,8 +1,8 @@
 <template>
     <div style="padding:20px;">
       <div class="comtainer">
-          <div class="babel vcenter">
-            <my-break></my-break>
+            <div class="babel vcenter">
+           <my-break></my-break>
           </div>
           <div class="input search ">
             <el-row  type="flex">
@@ -76,45 +76,39 @@
           </div>  
         </div>
         <el-table
-          :data="tableData"
-          style="width: 100%">
-          <el-table-column
-            type="index"
-            :index="indexMethod"
-            align="center"
-            >
-          </el-table-column>
-          <el-table-column
+            :data="tableData3"
+            height="100%"
+            border
+            stripe
+            style="width: 100%;">
+            <el-table-column
             prop="date"
-            label="日期"
-            width="180"
-            align="center"
-            >
-          </el-table-column>
-          <el-table-column
+            label="id"
+            width="90"
+            align="center">
+            </el-table-column>
+            <el-table-column
             prop="name"
             label="姓名"
             width="180"
-            align="center"
-            >
-          </el-table-column>
-          <el-table-column
+            align="center">
+            </el-table-column>
+            <el-table-column
             prop="address"
             label="地址"
-            align="center"
-            >
-          </el-table-column>
-          <el-table-column label="操作" align="center">
-            <template slot-scope="scope">
-              <el-button
-                size="mini"
-                @click="handleEdit(scope.$index, scope.row)">审批</el-button>
-              <el-button
-                size="mini"
-                type="primary"
-                @click="handleDelete(scope.$index, scope.row)">确认</el-button>
-            </template>
-          </el-table-column>
+            align="center">
+            </el-table-column>
+            <el-table-column
+            prop="address"
+            label="地址"
+            align="center">
+            </el-table-column>
+            <el-table-column
+            prop="address"
+            label="地址"
+            align="center">
+            </el-table-column>
+
         </el-table>
         <div class="page">
           <!-- <el-pagination
@@ -194,41 +188,69 @@ export default {
           }
         ]
       },
-      tableData: [
+      tableData3: [
         {
-          date: "2016-05-02",
+          date: "0",
           name: "王小虎",
           address: "上海市普陀区金沙江路 1518 弄"
         },
         {
-          date: "2016-05-04",
+          date: "1",
           name: "王小虎",
-          address: "上海市普陀区金沙江路 1517 弄"
+          address: "上海市普陀区金沙江路 1518 弄"
         },
         {
-          date: "2016-05-01",
+          date: "2",
           name: "王小虎",
-          address: "上海市普陀区金沙江路 1519 弄"
+          address: "上海市普陀区金沙江路 1518 弄"
         },
         {
-          date: "2016-05-03",
+          date: "3",
           name: "王小虎",
-          address: "上海市普陀区金沙江路 1516 弄"
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "4",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "5",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "6",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "7",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "8",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "9",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "10",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
         }
       ],
       currentPage3: 1
     };
   },
-  mounted() {},
   methods: {
     handleSizeChange() {},
     handleCurrentChange() {},
-    handleEdit(index, row) {
-      console.log(index, row);
-    },
-    handleDelete(index, row) {
-      console.log(index, row);
-    },
     search() {
       // Loading.service(options);
       // alert(3);
