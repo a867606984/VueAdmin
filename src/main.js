@@ -12,6 +12,12 @@ import store from './store/index'
 import Api from './api/index'//ajax组件
 import { getToken, setToken, removeToken } from './utils/auth'
 import routers from './utils/routers'
+
+import 'vue-awesome/icons/flag'
+import 'vue-awesome/icons/arrow-circle-right'
+import 'vue-awesome/icons/adjust'
+import 'vue-awesome/icons/cogs'
+import Icon from "vue-awesome/components/Icon";
 // import { library } from '@fortawesome/fontawesome-svg-core'
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -20,6 +26,7 @@ import routers from './utils/routers'
 
 // Vue.component('font-awesome-icon', FontAwesomeIcon)
 
+Vue.component('icon', Icon)
 Vue.use(Api)
 Vue.use(Vuex)
 Vue.use(ElementUI)

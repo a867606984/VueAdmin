@@ -18,7 +18,7 @@
                   <li>退出</li> -->
                   <li v-for="(item,index) in menuArr" :key="index"  @mouseover="over(index)" @mouseout="out" @click="topMenuClick(index)" :class="{active:isOver&&curIndex==index}">
                     <!-- <i :class="item.icon"></i> -->
-                    <i :class="item.icon"></i> {{item.name}}
+                    <icon :name="item.icon" scale="1.2" ></icon> {{item.name}}
                   </li>
                   <li>
                     <el-dropdown>
@@ -82,7 +82,8 @@
               <!-- <router-link to="/order">订单管理</router-link> -->
             </el-menu-item>
             <el-menu-item index="/appMenu/returnGoods">
-              <!-- <i class="fas fa-money-check-alt"></i>  -->
+            <!-- <icon name="beer"></icon> -->
+              <!-- <icon name="adjust"></icon> -->
               退货管理子系统
               <!-- <router-link to="/order">订单管理</router-link> -->
             </el-menu-item>
@@ -90,26 +91,25 @@
     </div>
 </template>
 <script>
-// import navMenu from "@/components/navMenu";
-
 export default {
+  components: {
+    // navMenu
+  },
   data() {
     return {
       activeIndex: "/home/unionPay",
       activeIndex2: "/home/unionPay",
       isOver: false,
       menuArr: [
-        { name: "管理员", icon: "fas fa-address-card" },
-        { name: "修改信息", icon: "fas fa-cog" },
-        { name: "修改密码", icon: "fas fa-cog" },
-        { name: "退出", icon: "fas fa-arrow-alt-circle-left" }
+        { name: "管理员", icon: "adjust" },
+        { name: "修改信息", icon: "flag" },
+        { name: "修改密码", icon: "cogs" },
+        { name: "退出", icon: "arrow-circle-right" }
       ],
       curIndex: 0
     };
   },
-  components: {
-    // navMenu
-  },
+
   methods: {
     over(index) {
       this.isOver = true;
@@ -193,5 +193,14 @@ header {
 }
 .fas {
   margin-right: 5px;
+}
+.fa-icon {
+  /* 或任意其它字体大小相对值 */
+  /* width: auto;
+  height: 1em;  */
+  /* 要在 Safari 中正常工作，需要再引入如下两行代码 */
+  /* max-width: 100%;
+  max-height: 100%; */
+  vertical-align: middle;
 }
 </style>
