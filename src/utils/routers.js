@@ -98,5 +98,10 @@ const routers = [
             }
         ]
     },
+    {
+        path: '/404',
+        // redirect: '/404',
+        component: () => import("@/view/404"),
+    }
 ];
 export default routers
