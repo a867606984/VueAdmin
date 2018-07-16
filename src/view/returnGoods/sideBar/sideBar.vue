@@ -17,11 +17,13 @@
                   router
                   >
                     <el-menu-item index="/appMenu/returnGoods/import">
-                        <i class="el-icon-sold-out"></i>
+                        <!-- <i class="el-icon-sold-out"></i> -->
+                        <icon name="edit"></icon>
                         <span slot="title">记录录入</span>
                     </el-menu-item>
                     <el-menu-item index="/appMenu/returnGoods/confirm">
-                        <i class="el-icon-sold-out"></i>
+                        <!-- <i class="el-icon-sold-out"></i> -->
+                        <icon name="laptop"></icon>
                         <span slot="title">记录处理</span>
                     </el-menu-item>
                   </el-menu>
@@ -73,6 +75,9 @@ export default {
 }
 .tac ul li {
   margin-bottom: 1px;
+}
+.el-menu-vertical-demo li {
+  text-align: left;
 }
 </style>
 

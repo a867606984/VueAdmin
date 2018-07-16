@@ -6,6 +6,7 @@
               <el-col :span="24" > 
                   <!-- <h5>自定义颜色</h5> -->
                   <el-menu
+                  
                   :default-active="$route.path"
                   class="el-menu-vertical-demo"
                   @open="handleOpen"
@@ -16,9 +17,10 @@
                   active-text-color="#409EFF"
                   router
                   >
-                    <el-submenu index="1">
+                    <el-submenu index="1" >
                       <template slot="title">
-                         <i class="el-icon-star-off"></i>
+                         <!-- <i class="el-icon-star-off"></i> -->
+                         <icon name="align-left"></icon>
                       <span>日信息统计</span>
                       </template>
                       <el-menu-item-group>
@@ -28,7 +30,8 @@
                     </el-submenu>
                     <el-submenu index="2">
                       <template slot="title">
-                         <i class="el-icon-location"></i>
+                         <!-- <i class="el-icon-location"></i> -->
+                         <icon name="align-left"></icon>
                       <span>周信息统计</span>
                       </template>
                       <el-menu-item-group>
@@ -37,15 +40,18 @@
                       </el-menu-item-group>
                     </el-submenu>
                       <el-menu-item index="/appMenu/cross/month">
-                        <i class="el-icon-star-off"></i>
+                        <!-- <i class="el-icon-star-off"></i> -->
+                        <icon name="align-left"></icon>
                         <span slot="title">月信息统计</span>
                     </el-menu-item>
                     <el-menu-item index="/appMenu/cross/season">
-                        <i class="el-icon-sold-out"></i>
+                        <!-- <i class="el-icon-sold-out"></i> -->
+                        <icon name="align-left"></icon>
                         <span slot="title">季度信息统计</span>
                     </el-menu-item>
                     <el-menu-item index="/appMenu/cross/year">
-                        <i class="el-icon-sold-out"></i>
+                        <!-- <i class="el-icon-sold-out"></i> -->
+                        <icon name="align-left"></icon>
                         <span slot="title">年信息统计</span>
                     </el-menu-item>
                   </el-menu>
@@ -97,6 +103,12 @@ export default {
 }
 .tac ul li {
   margin-bottom: 1px;
+}
+/* .el-submenu__title {
+  text-align: left;
+} */
+.el-menu-vertical-demo li {
+  text-align: left;
 }
 </style>
 

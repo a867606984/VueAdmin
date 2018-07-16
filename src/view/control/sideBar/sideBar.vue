@@ -17,11 +17,13 @@
                   router
                   >
                     <el-menu-item index="/appMenu/control/money">
-                        <i class="el-icon-sold-out"></i>
+                        <!-- <i class="el-icon-sold-out"></i> -->
+                        <icon name="wpforms"></icon>
                         <span slot="title">异常资金</span>
                     </el-menu-item>
                     <el-menu-item index="/appMenu/control/lack">
-                        <i class="el-icon-sold-out"></i>
+                        <!-- <i class="el-icon-sold-out"></i> -->
+                        <icon name="wpexplorer"></icon>
                         <span slot="title">异常缺失</span>
                     </el-menu-item>
                   </el-menu>
@@ -73,6 +75,9 @@ export default {
 }
 .tac ul li {
   margin-bottom: 1px;
+}
+.el-menu-vertical-demo li {
+  text-align: left;
 }
 </style>
 

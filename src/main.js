@@ -19,6 +19,20 @@ import 'vue-awesome/icons/adjust'
 import 'vue-awesome/icons/cogs'
 import 'vue-awesome/icons/address-card'
 import 'vue-awesome/icons/unlock'
+import 'vue-awesome/icons/university'
+import 'vue-awesome/icons/map'
+import 'vue-awesome/icons/credit-card'
+import 'vue-awesome/icons/align-left'
+import 'vue-awesome/icons/align-center'
+import 'vue-awesome/icons/align-justify'
+import 'vue-awesome/icons/align-right'
+import 'vue-awesome/icons/star'
+import 'vue-awesome/icons/suitcase'
+import 'vue-awesome/icons/search'
+import 'vue-awesome/icons/edit'
+import 'vue-awesome/icons/wpexplorer'
+import 'vue-awesome/icons/wpforms'
+import 'vue-awesome/icons/laptop'
 import Icon from "vue-awesome/components/Icon";
 // import { library } from '@fortawesome/fontawesome-svg-core'
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons'
@@ -77,9 +91,10 @@ router.beforeEach((to, from, next) => {
 
 })
 Vue.prototype.$loadingShow = function (loadingText) {
+
   this.$loading({
     body: true,
-    text: loadingText,
+    text: loadingText || '加载中',
     background: "rgba(0, 0, 0, .8 )"
   });
 

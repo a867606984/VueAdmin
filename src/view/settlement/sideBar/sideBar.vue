@@ -18,7 +18,8 @@
                   >
                   <el-submenu index="">
                     <template slot="title">
-                      <i class="el-icon-printer"></i>
+                      <!-- <i class="el-icon-printer"></i> -->
+                      <icon name="star"></icon>
                       <span>财务会计</span>
                     </template>
                     <el-menu-item-group>
@@ -28,7 +29,8 @@
                     </el-menu-item-group>
                   </el-submenu> 
                   <el-menu-item index="/appMenu/settlement/result">
-                      <i class="el-icon-sold-out"></i>
+                      <!-- <i class="el-icon-sold-out"></i> -->
+                      <icon name="suitcase"></icon>
                       <span slot="title">清分结算系统</span>
                   </el-menu-item>
                   </el-menu>
@@ -80,6 +82,9 @@ export default {
 }
 .tac ul li {
   margin-bottom: 1px;
+}
+.el-menu-vertical-demo li {
+  text-align: left;
 }
 </style>
 

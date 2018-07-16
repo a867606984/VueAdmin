@@ -17,7 +17,8 @@
                   router
                   >
                   <el-menu-item index="/appMenu/search/search">
-                      <i class="el-icon-sold-out"></i>
+                      <!-- <i class="el-icon-sold-out"></i> -->
+                      <icon name="search"></icon>
                       <span slot="title">个人账单</span>
                   </el-menu-item>
                   </el-menu>
@@ -69,6 +70,9 @@ export default {
 }
 .tac ul li {
   margin-bottom: 1px;
+}
+.el-menu-vertical-demo li {
+  text-align: left;
 }
 </style>
 

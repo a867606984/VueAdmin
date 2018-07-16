@@ -35,7 +35,8 @@
                       </el-submenu>
                   </el-submenu> -->
                   <el-menu-item index="/appMenu/home/unionPay">
-                      <i class="el-icon-star-off"></i>
+                      <!-- <i class="el-icon-star-off"></i> -->
+                      <icon name="university"></icon>
                       <span slot="title">银行账单</span>
                   </el-menu-item>
                   <!-- <el-menu-item index="/appMenu/home/pos">
@@ -44,7 +45,8 @@
                   </el-menu-item> -->
                   <el-submenu index="/appMenu/home/pos">
                     <template slot="title">
-                      <i class="el-icon-printer"></i>
+                      <!-- <i class="el-icon-printer"></i> -->
+                      <icon name="map"></icon>
                       <span>POS账单</span>
                     </template>
                     <el-menu-item-group>
@@ -54,7 +56,8 @@
                     </el-menu-item-group>
                   </el-submenu> 
                   <el-menu-item index="/appMenu/home/diff">
-                      <i class="el-icon-sold-out"></i>
+                      <!-- <i class="el-icon-sold-out"></i> -->
+                      <icon name="credit-card"></icon>
                       <span slot="title">金额不一致</span>
                   </el-menu-item>
                   </el-menu>
@@ -106,6 +109,9 @@ export default {
 }
 .tac ul li {
   margin-bottom: 1px;
+}
+.el-menu-vertical-demo li {
+  text-align: left;
 }
 </style>
 
