@@ -95,6 +95,7 @@ export default {
   components: {
     // navMenu
   },
+
   data() {
     return {
       activeIndex: "/home/unionPay",

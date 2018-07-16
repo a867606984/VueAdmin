@@ -5,14 +5,16 @@
       <el-form-item prop="username">
         <span class="svg-container svg-container_login">
           <!-- <svg-icon icon-class="user" /> -->
-          <i class="fas fa-user-tie"></i>
+          <!-- <i class="fas fa-user-tie"></i> -->
+          <icon name="address-card"></icon>
         </span>
         <el-input name="username" type="text" v-model="loginForm.username" autoComplete="on" placeholder="username" />
       </el-form-item>
       <el-form-item prop="password">
         <span class="svg-container">
           <!-- <svg-icon icon-class="password"></svg-icon> -->
-          <i class="fas fa-lock"></i>
+          <!-- <i class="fas fa-lock"></i> -->
+          <icon name="unlock"></icon>
           
         </span>
         <el-input name="password" :type="pwdType" @keyup.enter.native="handleLogin" v-model="loginForm.password" autoComplete="on"
@@ -186,6 +188,10 @@ $light_gray: #eee;
     color: $dark_gray;
     cursor: pointer;
     user-select: none;
+  }
+  .fa-icon {
+    color: #fff;
+    vertical-aligin: middle;
   }
 }
 </style>

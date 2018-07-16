@@ -17,6 +17,8 @@ import 'vue-awesome/icons/flag'
 import 'vue-awesome/icons/arrow-circle-right'
 import 'vue-awesome/icons/adjust'
 import 'vue-awesome/icons/cogs'
+import 'vue-awesome/icons/address-card'
+import 'vue-awesome/icons/unlock'
 import Icon from "vue-awesome/components/Icon";
 // import { library } from '@fortawesome/fontawesome-svg-core'
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons'
@@ -74,18 +76,45 @@ router.beforeEach((to, from, next) => {
   }
 
 })
-Vue.prototype.$loadingShow = function (text) {
+Vue.prototype.$loadingShow = function (loadingText) {
   this.$loading({
     body: true,
-    text,
+    text: loadingText,
     background: "rgba(0, 0, 0, .8 )"
   });
-  setTimeout(() => {
-    this.$loading().close();
-  }, 2000);
+
+}
+Vue.prototype.$loadingHide = function () {
+  this.$loading().close();
+}
+Vue.prototype.$alertShow = function (msg) {
+  this.$alert(msg, '', {
+    confirmButtonText: '确定',
+  });
+
 }
 
+Vue.prototype.$Post = function (url, params, success, failure, isShowLoding, loadingText) {
+  let _this = this;
+  if (isShowLoding) {
+    _this.$loadingShow(loadingText);
+  }
+  _this.$http.post(url, params, res => {
+    if (isShowLoding) {
+      _this.$loadingHide();
+    }
+    success(res);
+  }, err => {
+    if (isShowLoding) {
+      _this.$loadingHide();
+    }
+    failure(err)
+  })
+}
+
+
 /* eslint-disable no-new */
+
 new Vue({
   el: '#app',
   router,
