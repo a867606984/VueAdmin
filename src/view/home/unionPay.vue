@@ -76,39 +76,37 @@
           </div>  
         </div>
         <el-table
-            :data="tableData3"
-            height="100%"
-            border
-            stripe
-            style="width: 100%;">
-            <el-table-column
+          :data="tableData"
+          style="width: 100%"
+          border
+          ref="table"
+          >
+          <el-table-column
+            type="index"
+            :index="indexMethod"
+            align="center"
+            >
+          </el-table-column>
+          <el-table-column
             prop="date"
-            label="id"
-            width="90"
-            align="center">
-            </el-table-column>
-            <el-table-column
+            label="日期"
+            width="180"
+            align="center"
+            >
+          </el-table-column>
+          <el-table-column
             prop="name"
             label="姓名"
             width="180"
-            align="center">
-            </el-table-column>
-            <el-table-column
+            align="center"
+            >
+          </el-table-column>
+          <el-table-column
             prop="address"
             label="地址"
-            align="center">
-            </el-table-column>
-            <el-table-column
-            prop="address"
-            label="地址"
-            align="center">
-            </el-table-column>
-            <el-table-column
-            prop="address"
-            label="地址"
-            align="center">
-            </el-table-column>
-
+            align="center"
+            >
+          </el-table-column>
         </el-table>
         <div class="page">
           <!-- <el-pagination
@@ -118,10 +116,13 @@
             <el-pagination
               @size-change="handleSizeChange"
               @current-change="handleCurrentChange"
-              :current-page.sync="currentPage3"
-              :page-size="10"
+              :current-page.sync="currentPage"
+              :page-size="5"
               layout="prev, pager, next, jumper"
-              :total="100">
+              :total="20"
+              @prev-click="prev"
+              @next-click="next"
+              >
             </el-pagination>
         </div>
     </div>
@@ -188,69 +189,137 @@ export default {
           }
         ]
       },
-      tableData3: [
-        {
-          date: "0",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "1",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "3",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "4",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "5",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "6",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "7",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "8",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "9",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "10",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        }
+      tableData: [],
+      dataArr: [
+        [
+          {
+            date: "0",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "1",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "2",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "3",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "4",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          }
+        ],
+        [
+          {
+            date: "5",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "6",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "7",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "8",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "9",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          }
+        ],
+        [
+          {
+            date: "10",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "11",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "12",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "13",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "14",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          }
+        ],
+        [
+          {
+            date: "15",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "16",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "17",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "18",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "19",
+            name: "王小虎",
+            address: "上海市普陀区金沙江路 1518 弄"
+          }
+        ]
       ],
-      currentPage3: 1
+      currentPage: 1,
+      table: this.$refs.table
     };
   },
+  mounted() {
+    this.getData(this.currentPage);
+  },
   methods: {
-    handleSizeChange() {},
-    handleCurrentChange() {},
+    getData(index) {
+      this.$loadingShow();
+      let arr = this.dataArr;
+      let len = arr.length;
+      // for (let i = 0; i < len; i++) {}
+      this.tableData = arr[index - 1];
+      this.$loadingHide();
+    },
+    handleSizeChange(index) {},
+    handleCurrentChange(index) {
+      this.getData(index);
+    },
     search() {
       // Loading.service(options);
       // alert(3);
@@ -262,6 +331,17 @@ export default {
       setTimeout(() => {
         this.$loading().close();
       }, 2000);
+    },
+    indexMethod(index) {
+      return index;
+    },
+    prev(index) {
+      // console.log(index);
+      this.getData(index);
+    },
+    next(index) {
+      // console.log(index);
+      this.getData(index);
     }
   }
 };
