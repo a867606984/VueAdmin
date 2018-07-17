@@ -5,9 +5,11 @@
           <side-bar></side-bar>
         </el-aside>
         <el-main class="main">
-          <!-- <transition name="fade"> -->
-            <router-view/>
-          <!-- </transition> -->
+          <happy-scroll color="rgba(0,0,0,0)" size="2">
+            <transition name="fade">
+              <router-view/>
+            </transition>
+          </happy-scroll>
         </el-main>
       </el-container>
     </div>
@@ -17,77 +19,9 @@ import sideBar from "./sideBar/sideBar";
 export default {
   components: { sideBar },
   data() {
-    return {
-      options: [
-        {
-          value: "选项1",
-          label: "id"
-        },
-        {
-          value: "选项2",
-          label: "地址"
-        },
-        {
-          value: "选项3",
-          label: "pos"
-        },
-        {
-          value: "选项4",
-          label: "银行"
-        }
-      ],
-      value5: "",
-
-      input21: "",
-      value4: [new Date(2016, 9, 10, 8, 40), new Date(2016, 9, 10, 9, 40)],
-      value6: "",
-      pickerOptions2: {
-        shortcuts: [
-          {
-            text: "最近一周",
-            onClick(picker) {
-              const end = new Date();
-              const start = new Date();
-              start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
-              picker.$emit("pick", [start, end]);
-            }
-          },
-          {
-            text: "最近一个月",
-            onClick(picker) {
-              const end = new Date();
-              const start = new Date();
-              start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
-              picker.$emit("pick", [start, end]);
-            }
-          },
-          {
-            text: "最近三个月",
-            onClick(picker) {
-              const end = new Date();
-              const start = new Date();
-              start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
-              picker.$emit("pick", [start, end]);
-            }
-          }
-        ]
-      }
-    };
+    return {};
   },
-  methods: {
-    search() {
-      // Loading.service(options);
-      // alert(3);
-      this.$loading({
-        body: true,
-        text: "加载中",
-        background: "rgba(0, 0, 0, .8 )"
-      });
-      setTimeout(() => {
-        this.$loading().close();
-      }, 2000);
-    }
-  }
+  methods: {}
 };
 </script>
 <style scoped>
@@ -130,5 +64,21 @@ export default {
 }
 .babel {
   padding: 20px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.content .left {
+  float: left;
+  width: 15%;
+  height: 100%;
+}
+.content .right {
+  float: right;
+  width: 85%;
+  height: 100%;
 }
 </style>

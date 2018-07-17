@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-      <!-- <header-top></header-top> -->
-      <!-- <nav-menu></nav-menu> -->
         <keep-alive>
           <router-view v-if="!!$route.keepAlive"/>
         </keep-alive>
@@ -22,9 +20,9 @@ export default {
       // this.$http.get("./scr/data.JSON", res => {
       //   console.log(res.data);
       // });
-      axios.get("./data.JSON").then(res => {
-        console.log(res.data);
-      });
+      // axios.get("./data.JSON").then(res => {
+      //   console.log(res.data);
+      // });
     }
   },
   computed: {

@@ -14,6 +14,8 @@ import { getToken, setToken, removeToken } from './utils/auth'
 import routers from './utils/routers'
 import NProgress from 'nprogress'//顶部进度条
 import 'nprogress/nprogress.css'
+import { HappyScroll } from 'vue-happy-scroll'//滚动条
+import 'vue-happy-scroll/docs/happy-scroll.css'
 
 import 'vue-awesome/icons/flag'
 import 'vue-awesome/icons/arrow-circle-right'
@@ -37,6 +39,7 @@ import 'vue-awesome/icons/wpforms'
 import 'vue-awesome/icons/laptop'
 import Icon from "vue-awesome/components/Icon";
 
+Vue.component('happy-scroll', HappyScroll)
 Vue.component('icon', Icon)
 Vue.use(Api)
 Vue.use(Vuex)
