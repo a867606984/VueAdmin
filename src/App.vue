@@ -46,6 +46,7 @@ export default {
   top: 0;
   left: 0;
   overflow-y: scroll;
+  margin-top: 0.2rem;
   /* background: #fff; */
   /* background: linear-gradient(to bottom, #333, #fff, #fff, #fff); */
 }

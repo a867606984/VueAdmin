@@ -2,7 +2,7 @@
     <div>
         
             <el-breadcrumb separator="/" class="small-menu">
-                <el-breadcrumb-item :to="{ path: '/' }">收费业务对账子系统</el-breadcrumb-item>
+                <el-breadcrumb-item :to="{ path: '/' }">个人账单查询子系统</el-breadcrumb-item>
                 <!-- <el-breadcrumb-item>银行账单</el-breadcrumb-item> -->
                 <el-breadcrumb-item v-for="(item,index) in $route.meta.break" :key="index">{{item}}</el-breadcrumb-item>
             </el-breadcrumb>

@@ -12,6 +12,8 @@ import store from './store/index'
 import Api from './api/index'//ajax组件
 import { getToken, setToken, removeToken } from './utils/auth'
 import routers from './utils/routers'
+import NProgress from 'nprogress'//顶部进度条
+import 'nprogress/nprogress.css'
 
 import 'vue-awesome/icons/flag'
 import 'vue-awesome/icons/arrow-circle-right'
@@ -34,13 +36,6 @@ import 'vue-awesome/icons/wpexplorer'
 import 'vue-awesome/icons/wpforms'
 import 'vue-awesome/icons/laptop'
 import Icon from "vue-awesome/components/Icon";
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-// library.add(faCoffee)
-
-// Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.component('icon', Icon)
 Vue.use(Api)
@@ -59,7 +54,6 @@ router.beforeEach((to, from, next) => {
   if (!!to.meta.title) {
     document.title = to.meta.title
   }
-
   if (getToken()) {
     // console.log(2)
     // removeToken();
@@ -111,18 +105,22 @@ Vue.prototype.$alertShow = function (msg) {
 
 Vue.prototype.$Post = function (url, params, success, failure, isShowLoding, loadingText) {
   let _this = this;
-  if (isShowLoding) {
-    _this.$loadingShow(loadingText);
-  }
+  // if (isShowLoding) {
+  //   _this.$loadingShow(loadingText);
+  // }
+  NProgress.start();
+
   _this.$http.post(url, params, res => {
     if (isShowLoding) {
       _this.$loadingHide();
     }
     success(res);
+    NProgress.done();
   }, err => {
-    if (isShowLoding) {
-      _this.$loadingHide();
-    }
+    // if (isShowLoding) {
+    //   _this.$loadingHide();
+    // }
+    NProgress.done();
     failure(err)
   })
 }
