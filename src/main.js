@@ -125,7 +125,26 @@ Vue.prototype.$Post = function (url, params, success, failure, isShowLoding, loa
   })
 }
 
-
+Vue.prototype.$gotTime = function (now) {
+  let year = now.getFullYear();
+  let month = now.getMonth() + 1;
+  let day = now.getDate();
+  let h = now.getHours();
+  let m = now.getMinutes();
+  let s = now.getSeconds();
+  let str = "";
+  function t(time) {
+    if (time.length < 2) {
+      return "0" + time;
+    } else if (!time) {
+      return "00";
+    }
+    return time;
+  }
+  return str = `${t(year)}-${t(month)}-${t(day)} ${t(
+    h
+  )}:${t(m)}:${t(s)}`;
+}
 /* eslint-disable no-new */
 
 new Vue({

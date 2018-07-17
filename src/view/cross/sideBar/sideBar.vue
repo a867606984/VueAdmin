@@ -1,5 +1,5 @@
 <template>
-    <div id="sideBar" style="height:100%;background-color:#002140">
+    <div id="sideBar" class="v-height-bg">
         
           <!-- <side-bar></side-bar> -->
             <el-row class="tac" >

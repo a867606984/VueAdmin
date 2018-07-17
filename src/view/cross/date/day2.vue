@@ -1,7 +1,7 @@
 <template>
     <div style="padding:20px;">
       <div class="comtainer">
-            <div class="babel vcenter">
+          <div class="babel vcenter">
            <my-break></my-break>
           </div>
           <div class="input search ">

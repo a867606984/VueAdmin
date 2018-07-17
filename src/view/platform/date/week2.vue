@@ -1,6 +1,6 @@
 <template>
     <div style="padding:20px;">
-      <div class="comtainer">
+      <div>
             <div class="babel vcenter">
            <my-break></my-break>
           </div>

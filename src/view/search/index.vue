@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="v-height">
       <el-container>
-        <el-aside width="200px" style="margin-top:10px">
+        <el-aside width="200px" class="v-padding">
           <side-bar></side-bar>
         </el-aside>
         <el-main class="main">

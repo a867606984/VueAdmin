@@ -1,6 +1,6 @@
 <template>
     <div style="padding:20px;">
-      <div class="comtainer">
+      <div>
           <div class="babel vcenter">
             <my-break></my-break>
           </div>
@@ -108,11 +108,11 @@
             <template slot-scope="scope">
               <el-button
                 size="mini"
-                @click="handleEdit(scope.$index, scope.row)">审批</el-button>
+                @click="handleApply(scope.$index, scope.row)">审批</el-button>
               <el-button
                 size="mini"
                 type="primary"
-                @click="handleDelete(scope.$index, scope.row)">确认</el-button>
+                @click="handleComfirm(scope.$index, scope.row)">确认</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -223,10 +223,10 @@ export default {
   methods: {
     handleSizeChange() {},
     handleCurrentChange() {},
-    handleEdit(index, row) {
+    handleApply(index, row) {
       console.log(index, row);
     },
-    handleDelete(index, row) {
+    handleComfirm(index, row) {
       console.log(index, row);
     },
     search() {
@@ -240,6 +240,9 @@ export default {
       setTimeout(() => {
         this.$loading().close();
       }, 2000);
+    },
+    indexMethod(index) {
+      return index;
     }
   }
 };

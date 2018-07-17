@@ -1,7 +1,7 @@
 <template>
     <div>
-      <el-container>
-        <el-aside width="200px" style="margin-top:10px">
+      <el-container class="container v-height">
+        <el-aside width="200px" class="v-padding">
           <side-bar></side-bar>
         </el-aside>
         <el-main class="main">
@@ -125,9 +125,12 @@ export default {
 .main {
   padding: 10px;
 }
-.comtainer {
-  border: 1px solid #ccc;
-}
+/* .container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+} */
 .babel {
   padding: 20px;
 }

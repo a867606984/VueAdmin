@@ -52,6 +52,7 @@ export default {
 }
 #app > div {
   /* background: #fff; */
+  height: 100%;
 }
 * {
   margin: 0;
@@ -98,5 +99,18 @@ a {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+.v-padding {
+  padding-top: 0.2rem;
+}
+.v-height-bg {
+  height: 100%;
+  background-color: #002140;
+}
+.el-container {
+  height: 100%;
+}
+.v-height {
+  height: 100%;
 }
 </style>

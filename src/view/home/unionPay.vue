@@ -1,6 +1,6 @@
 <template>
     <div style="padding:20px;">
-      <div class="comtainer">
+      <div>
             <div class="babel vcenter">
            <my-break></my-break>
           </div>
@@ -32,7 +32,9 @@
                         type="daterange"
                         range-separator="至"
                         start-placeholder="开始日期"
-                        end-placeholder="结束日期">
+                        end-placeholder="结束日期"
+                        @change="selTime"
+                        >
                       </el-date-picker>
                     <!-- </div> -->
                   <!-- </div> -->
@@ -43,7 +45,7 @@
             <el-row type="flex">
               <el-col :span="4">
                 <div class="grid-content bg-purple">
-                  <el-select v-model="value5" clearable placeholder="类型">
+                  <el-select v-model="value5" clearable placeholder="类型" @change="selVal">
                     <el-option
                       v-for="item in options"
                       :key="item.value"
@@ -342,6 +344,16 @@ export default {
     next(index) {
       // console.log(index);
       this.getData(index);
+    },
+    selTime(time) {
+      // alert(3);
+      let now = time[0];
+
+      let str = this.$gotTime(now);
+      console.log(str);
+    },
+    selVal(val) {
+      console.log(val);
     }
   }
 };
